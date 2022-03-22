@@ -1,0 +1,90 @@
+
+<html>
+<head>
+	<style>
+		.categories{
+			background-color: blue;
+			color: white;
+			border-style: none;
+			border-radius: 45px;
+		}
+
+		.persons{
+			border-style: solid;
+			border-width: 1px;
+			width: 50%;
+			margin: auto;
+			margin-top: 10px;
+			padding: 15px;
+			border-radius: 20px;
+		}
+
+		.btns{
+			border-style: none;
+			background-color: rgb(155,155,155);
+			color: white;
+			font-size: 25px;
+			border-radius: 45px;
+			padding: 25px;
+			float: left;
+		}
+		.insideP{
+			font-size: 25px;
+		}
+
+		body{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<button class="categories" onclick="fct(1)">Category 1</button> <button class="categories" 				onclick="fct(2)">Category 2</button> <button class="categories" onclick="fct(3)"> Category 3</button>
+	<div id="div"></div>
+</body>
+<script>
+	
+	var Category1 = ["Firstname1 LastName1","Firstname2 LastName2","Firstname3 LastName3"];
+	var Category2 = ["Firstname1 LastName1","Firstname2 LastName2","Firstname3 LastName3"];
+	var Category3 =["Firstname1 LastName1","Firstname2 LastName2","Firstname3 LastName3"];
+	
+	function fct(nb)
+	{
+		if (nb == 1) 
+		{
+			var y = "";
+			for (var i = 0 ; i < Category1.length; i++) 
+			{
+				lettersArray = Category1[i].split(" ");
+				 y += "<div class='persons'><button class='btns'>"+lettersArray[0].charAt(0)+lettersArray[1].charAt(0)+"</button><p class='insideP'>"+Category1[i]+"<button class='categories'>Category 1</button> </p> </div>";
+			}
+			document.getElementById('div').innerHTML = y;
+		}
+		else if (nb == 2) 
+		{
+			var y = "";
+			for (var i = 0 ; i < Category2.length; i++) 
+			{
+				lettersArray = Category2[i].split(" ");
+				 y += "<div class='persons'><button class='btns'>"+lettersArray[0].charAt(0)+lettersArray[1].charAt(0)+"</button><p class='insideP'>"+Category2[i]+"<button class='categories'>Category 2</button> </p> </div>";
+			}
+			document.getElementById('div').innerHTML = y;
+		}
+		else if(nb == 3)
+		{
+			var y = "";
+			for (var i = 0 ; i < Category3.length; i++) 
+			{
+				lettersArray = Category3[i].split(" ");
+				 y += "<div class='persons'><button class='btns'>"+lettersArray[0].charAt(0)+lettersArray[1].charAt(0)+"</button><p class='insideP'>"+Category3[i]+"<button class='categories'>Category 3</button> </p> </div>";
+			}
+			document.getElementById('div').innerHTML = y;
+		}
+	}
+		
+	//;
+		
+
+
+</script>
+</html>
